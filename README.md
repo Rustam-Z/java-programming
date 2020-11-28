@@ -92,14 +92,14 @@ Rustam_Z🚀, 9.10.2020
 - [HandleEvent1](programs/HandleEvent1.java) with the use of Inner Classes
 
 -	```
-	User Action						Object			Generated
+	User Action			Object			Generated
 
-	Click a button					JButton			ActionEvent
-	Click a check box				JCheckBox		ItemEvent, ActionEvent
-	Click a radio button			JRadioButton	ItemEvent, ActionEvent
+	Click a button			JButton			ActionEvent
+	Click a check box		JCheckBox		ItemEvent, ActionEvent
+	Click a radio button		JRadioButton		ItemEvent, ActionEvent
 	Press return on a text field	JTextField		ActionEvent
-	Select a new item				JComboBox		ItemEvent, ActionEvent
-	Window opened, closed, etc.		Window			WindowEvent 
+	Select a new item		JComboBox		ItemEvent, ActionEvent
+	Window opened, closed, etc.	Window			WindowEvent 
 	Mouse pressed, released, etc.	Component		MouseEvent 
 	Key released, pressed, etc. 	Component		KeyEvent 
 	```
@@ -109,21 +109,21 @@ Rustam_Z🚀, 9.10.2020
 	ActionEvent		ActionListener		actionPerformed(ActionEvent)
 	ItemEvent		ItemListener		itemStateChanged(ItemEvent)
 	WindowEvent		WindowListener		windowClosing(WindowEvent)
-										windowOpened(WindowEvent)
-										windowIconified(WindowEvent)
-										windowDeiconified(WindowEvent)
-										windowClosed(WindowEvent)
-										windowActivated(WindowEvent)
-										windowDeactivated(WindowEvent)
-	ContainerEvent	ContainerListener	componentAdded(ContainerEvent)
-										componentRemoved(ContainerEvent) 
+							windowOpened(WindowEvent)
+							windowIconified(WindowEvent)
+							windowDeiconified(WindowEvent)
+							windowClosed(WindowEvent)
+							windowActivated(WindowEvent)
+							windowDeactivated(WindowEvent)
+	ContainerEvent		ContainerListener	componentAdded(ContainerEvent)
+							componentRemoved(ContainerEvent) 
 	MouseEvent		MouseListener		mousePressed(MouseEvent)
-										mouseReleased(MouseEvent) 
-										mouseClicked(MouseEvent)
-										mouseExited(MouseEvent)	
-										mouseEntered(MouseEvent)
-	KeyEvent		KeyListener			keyPressed(KeyEvent)
-										keyReleased(KeyEvent) 
-										keyTypeed(KeyEvent)
+							mouseReleased(MouseEvent) 
+							mouseClicked(MouseEvent)
+							mouseExited(MouseEvent)	
+							mouseEntered(MouseEvent)
+	KeyEvent		KeyListener		keyPressed(KeyEvent)
+							keyReleased(KeyEvent) 
+							keyTypeed(KeyEvent)
 
 	```
