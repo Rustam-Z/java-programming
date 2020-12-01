@@ -3,8 +3,7 @@ package programs;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class HandleEvent1 extends JFrame
-{
+public class HandleEvent1 extends JFrame {
 	JButton jbtOK = new JButton("OK");
     JButton jbtCancel = new JButton("Cancel");
 
