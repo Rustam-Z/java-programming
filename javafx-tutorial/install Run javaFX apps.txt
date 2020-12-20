@@ -1,0 +1,18 @@
+Download an appropriate JavaFX runtime for your operating system and unzip it to a desired location. For this tutorial, we will be using JavaFX .
+
+Add an environment variable pointing to the lib directory of the runtime: (e.g. you have download and unziped "javafx-sdk-11.0.2")
+
+
+	set PATH_TO_FX="C:\Program Files\javafx-sdk-11.0.2\lib"
+
+You can now compile and run JavaFX applications from the command line using the JavaFX runtime.
+
+Compile the application (e.g. use HelloFX.java from this sample) using:
+
+	javac --module-path %PATH_TO_FX% --add-modules javafx.controls HelloFX.java
+
+Run  the application (e.g. use HelloFX.java from this sample) using:
+
+	java --module-path %PATH_TO_FX% --add-modules javafx.controls HelloFX
+
+reference : https://openjfx.io/openjfx-docs/#install-javafx

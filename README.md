@@ -15,7 +15,7 @@ Rustam_Z🚀, 9.10.2020
 - Java Exceptions: 
 	- https://www.javatpoint.com/exception-handling-in-java
 
-- Design Patterns, SOLID Principles- https://youtu.be/A1PWJB98qcw
+- Design Patterns, SOLID Principles - https://youtu.be/A1PWJB98qcw
 
 - [Java Swing](java-swing)
 
