@@ -5,6 +5,7 @@ Lab: #7
 Calculator Application 
 */
 
+// import libraries
 import javafx.application.Application;  
 import javafx.scene.Scene;  
 import javafx.stage.Stage;  
@@ -17,16 +18,16 @@ import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
   
 public class CalculatorJavaFX extends Application {  
-	String value;
-    String math;
-    double num1, num2, result;
+	String value; // text value
+    String math; // calculations, +, -, *, /
+    double num1, num2, result; // number 1, number 2, result
   
     @Override  
-    public void start(Stage primaryStage) throws Exception {  
-        // Text Field
-        TextField jtfSpace = new TextField();
+    public void start(Stage stage) throws Exception {  
+        // Text
+        TextField textField = new TextField();
           
-        // Button Field
+        // Buttons
         Button bOne = new Button("1");
         Button bTwo = new Button("2");
         Button bThree = new Button("3");
@@ -43,148 +44,108 @@ public class CalculatorJavaFX extends Application {
         Button bDiv = new Button("/");
 		Button bEqual = new Button("=");
         Button bDot = new Button(".");
-		
-		bOne.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "1");
-             }
-        });
-		bTwo.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "2");
-             }
-        });
-		bThree.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "3");
-             }
-        });
-		bFour.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "4");
-             }
-        });
-		bFive.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "5");
-             }
-        });
-		bSix.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "6");
-             }
-        });
-		bSeven.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "7");
-             }
-        });
-		bEight.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "8");
-             }
-        });
-		bNine.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "9");
-             }
-        });	
-		bZero.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + "0");
-             }
-        });	
-		bDot.setOnAction(new EventHandler<ActionEvent>(){
-             @Override
-             public void handle(ActionEvent event) {
-                jtfSpace.setText(jtfSpace.getText() + ".");
-             }
-        });			 
+
+		// lambdas
+        bZero.setOnAction(e -> textField.setText(textField.getText() + "0"));	
+        bOne.setOnAction(e ->  textField.setText(textField.getText() + "1")); 
+		bTwo.setOnAction(e -> textField.setText(textField.getText() + "2"));
+		bThree.setOnAction(e -> textField.setText(textField.getText() + "3"));
+		bFour.setOnAction(e -> textField.setText(textField.getText() + "4"));
+		bFive.setOnAction(e -> textField.setText(textField.getText() + "5"));
+		bSix.setOnAction(e -> textField.setText(textField.getText() + "6"));
+		bSeven.setOnAction(e -> textField.setText(textField.getText() + "7"));
+		bEight.setOnAction(e -> textField.setText(textField.getText() + "8"));
+		bNine.setOnAction(e -> textField.setText(textField.getText() + "9"));	
+        bDot.setOnAction(e -> textField.setText(textField.getText() + "."));	
+        		 
 		bAdd.setOnAction(new EventHandler<ActionEvent>(){
              @Override
              public void handle(ActionEvent event) {
                 math = "Add";
-                value = jtfSpace.getText();
+                value = textField.getText();
                 num1 = Double.parseDouble(value);
-                jtfSpace.setText("");
+                textField.setText("");
              }
         });	
 		bSub.setOnAction(new EventHandler<ActionEvent>(){
              @Override
              public void handle(ActionEvent event) {
                 math = "Sub";
-                value = jtfSpace.getText();
+                value = textField.getText();
                 num1 = Double.parseDouble(value);
-                jtfSpace.setText("");
+                textField.setText("");
              }
         });	
 		bMul.setOnAction(new EventHandler<ActionEvent>(){
              @Override
              public void handle(ActionEvent event) {
                 math = "Mul";
-                value = jtfSpace.getText();
+                value = textField.getText();
                 num1 = Double.parseDouble(value);
-                jtfSpace.setText("");
+                textField.setText("");
              }
         });	
 		bDiv.setOnAction(new EventHandler<ActionEvent>(){
              @Override
              public void handle(ActionEvent event) {
                 math = "Div";
-                value = jtfSpace.getText();
+                value = textField.getText();
                 num1 = Double.parseDouble(value);
-                jtfSpace.setText("");
+                textField.setText("");
              }
         });
 
 		bEqual.setOnAction(new EventHandler<ActionEvent>(){
              @Override
              public void handle(ActionEvent event) {
-                value = jtfSpace.getText();
-                num2 = Double.parseDouble(value);
+                value = textField.getText();
+                num2 = Double.parseDouble(value); // get the last value
                 switch (math) {
-                    case "Div": result = num1 / num2;
+                    case "Div": result = num1 / num2; 
+                        break;
                     case "Mul": result = num1 * num2;
-                    case "Add": result = num1 + num2;
-                    case "Sub": result = num1 - num2;
+                        break;
+                    case "Add": result = num1 + num2; 
+                        break;
+                    case "Sub": result = num1 - num2; 
+                        break;
                 }
-                jtfSpace.setText("" + result);		 
+                textField.setText("" + result);		 
              }
         });
-		 
-        GridPane root=new GridPane();  
-		HBox root2_1 = new HBox();
-		HBox root2_2 = new HBox();
-		HBox root2_3 = new HBox();
-		HBox root2_4 = new HBox();
-        Scene scene = new Scene(root, 150, 135);  
-		
-        root.addRow(0, jtfSpace);
-        root.addRow(1, root2_4);
-		root.addRow(2, root2_3);
-		root.addRow(3, root2_2);
-		root.addRow(4, root2_1);
-		root2_1.getChildren().addAll(bZero, bDot, bEqual, bAdd);   
-        root2_2.getChildren().addAll(bOne,  bTwo, bThree, bSub);   
-		root2_3.getChildren().addAll(bFour, bFive, bSix, bMul);   
-		root2_4.getChildren().addAll(bSeven, bEight, bNine, bDiv);   
-		
-        primaryStage.setScene(scene);  
-		primaryStage.setTitle("Calculator");  
-        primaryStage.show();  
+
+		// set layout to gridpane 
+        GridPane gridPane = new GridPane();  
+
+        gridPane.add(textField, 0, 0);
+
+        gridPane.add(bSeven, 1, 0);
+        gridPane.add(bEight, 1, 1);
+        gridPane.add(bNine, 1, 2);
+        gridPane.add(bDiv, 1, 3);
+
+        gridPane.add(bFour, 2, 0);
+        gridPane.add(bFive, 2, 1);
+        gridPane.add(bSix, 2, 2);
+        gridPane.add(bMul, 2, 3);
+
+        gridPane.add(bOne, 3, 0);
+        gridPane.add(bTwo, 3, 1);
+        gridPane.add(bThree, 3, 2);
+        gridPane.add(bSub, 3, 3);
+
+        gridPane.add(bZero, 4, 0);
+        gridPane.add(bDot, 4, 1);
+        gridPane.add(bEqual, 4, 2);
+        gridPane.add(bAdd, 4, 3);
+
+        Scene scene = new Scene(gridPane);  
+	
+        stage.setScene(scene);  
+        stage.setTitle("Calculator");  
+        stage.show();  
     }  
     public static void main(String[] args) {  
-        Application.launch(args);  
+        Application.launch(args); // running
     }  
-      
 }
