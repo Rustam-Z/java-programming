@@ -56,11 +56,11 @@ public class IUT_BMI {
                         System.out.print("Employee weight: "); employeeWeight = (input.nextInt());
                         System.out.print("Employee name: "); employeeName = (input.next());
 							
-						strSelect = "INSERT INTO Employee_BMI VALUES(" + employeeID + "," + "'" + employeeName + "'," + " "  + employeeHeight+"," + " " + employeeWeight+")";
+			strSelect = "INSERT INTO Employee_BMI VALUES(" + employeeID + "," + "'" + employeeName + "'," + " "  + employeeHeight+"," + " " + employeeWeight+")";
 						
                         System.out.println("The SQL query is: " + strSelect); // Echo For debugging
 					 
-						int count = stmt.executeUpdate(strSelect);
+			int count = stmt.executeUpdate(strSelect);
 
                         break;
 
@@ -76,7 +76,7 @@ public class IUT_BMI {
                     
                         System.out.println("The SQL query is: " + strSelect); // Echo For debugging
 					 
-						count= stmt.executeUpdate(strSelect);
+			count = stmt.executeUpdate(strSelect);
 
                         break;
 
